@@ -1,0 +1,6 @@
+
+<% @pokemon_cards.each do |card| %>
+  <%= card.id %>
+  <%= card.name %>
+  <li><%= image_tag(card.image_url, size: "250x250") %></li>
+<% end %>

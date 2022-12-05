@@ -10,8 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 0) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_05_120237) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "pokemon_cards", force: :cascade do |t|
+    t.string "name"
+    t.string "artist"
+    t.bigint "pokemon_set_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "image_url"
+    t.index ["pokemon_set_id"], name: "index_pokemon_cards_on_pokemon_set_id"
+  end
+
+  create_table "pokemon_sets", force: :cascade do |t|
+    t.string "name"
+    t.string "series"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "pokemon_cards", "pokemon_sets"
 end
