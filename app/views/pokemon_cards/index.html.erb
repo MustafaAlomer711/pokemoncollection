@@ -1,6 +1,18 @@
+<h1 class="text-center"><%= @pokemon_cards %></h1>
 
-<% @pokemon_cards.each do |card| %>
-  <%= card.id %>
-  <%= card.name %>
-  <li><%= image_tag(card.image_url, size: "250x250") %></li>
-<% end %>
+<div class="row">
+  <% @pokemon_cards.each do |card|%>
+    <div class="col-12 col-lg-4">
+      <div class="card-deck">
+        <div class="card-category text-center text-white" style="background-color:#ffa82e00;">
+          <div class="card-img-top">
+            <%= image_tag(card.image_url, size: "250x250") %>
+            <div class="card-body">
+              <h5 class="card-title text-dark"><%= card.name %></h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+ <% end %>
