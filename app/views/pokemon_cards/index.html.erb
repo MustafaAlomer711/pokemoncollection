@@ -1,13 +1,14 @@
-<h1 class="text-center"><%= @pokemon_cards %></h1>
-
+<h1 class="text-center mb-4"><%= @pokemon_cards.first.set_name %></h1>
 <div id="site-container">
-  <div class="site-body">
-    <div class="collection-box">
-      <% @pokemon_cards.each do |card|%>
-        <div class="card">
-            <%= image_tag(card.image_url, size: "93x140", class: "card-image") %>
+  <div class="card-listing">
+      <div class="site-body">
+        <div class="collection-box">
+          <% @pokemon_cards.each do |card|%>
+            <div class="card">
+                <%= image_tag(card.image_url, size: "93x140", class: "card-image") %>
+            </div>
+          <% end %>
         </div>
-      <% end %>
-    </div>
+      </div>
   </div>
 </div>

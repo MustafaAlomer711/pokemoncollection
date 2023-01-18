@@ -2,6 +2,12 @@ Pokemon.configure do |config|
   config.api_key = ENV['API_KEY']
 end
 
+base = PokemonCard.all
+base.each do |card|
+  card.set_name = "Base"
+  card.save
+end
+
 # base_set = Pokemon::Set.find('base1')
 # p base_set
 
