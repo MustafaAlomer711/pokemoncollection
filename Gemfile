@@ -62,6 +62,7 @@ gem 'pry', '~> 0.13.1'
 gem 'httparty'
 gem 'json'
 gem 'pokemon_tcg_sdk'
+gem 'lazyload-rails'
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]

@@ -1,0 +1,4 @@
+<h1 class="text-center">All Pokemon Sets</h1>
+<% @sets.each do |set| %>
+ <%= link_to set.name, pokemon_set_path(set) %>
+<% end %>
