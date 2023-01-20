@@ -12,12 +12,13 @@ end
 # base_set = Pokemon::Set.find('base1')
 # p base_set
 
-# BASE = PokemonSet.all
 
-sets = Pokemon::Set.all
-sets.each do |set|
-  p set.images.logo
-end
+# sets = Pokemon::Set.all
+# sets.each do |set|
+#   PokemonSet.create(name: set.name, series: set.series, image_url: set.images.logo)
+#   puts "Creating #{set.name}"
+# end
+
 
 # sets.each do |set|
 #   PokemonSet.create(name: set.name )
@@ -34,7 +35,8 @@ end
 # PokemonSet.create(name: series: )
 # PokemonSet.create(name: series: )
 
-# cards = Pokemon::Card.where(q: 'set.id:base2')
-# cards.each do |card|
-#   PokemonCard.create(name: card.name, artist: card.artist, image_url: card.images.small, pokemon_set_id: 2)
-# end
+cards = Pokemon::Card.where(q: '!set.name:Wizard Black Star Promos')
+cards.each do |card|
+  PokemonCard.create(name: card.name, artist: card.artist, image_url: card.images.small, pokemon_set_id: 3)
+  puts "Creating #{card.name}"
+end
