@@ -35,8 +35,16 @@ end
 # PokemonSet.create(name: series: )
 # PokemonSet.create(name: series: )
 
-cards = Pokemon::Card.where(q: '!set.name:Wizard Black Star Promos')
+# cards = Pokemon::Card.where(q: '!set.name:Wizard Black Star Promos')
+# cards.each do |card|
+#   PokemonCard.create(name: card.name, artist: card.artist, image_url: card.images.small, pokemon_set_id: 3)
+#   puts "Creating #{card.name}"
+# end
+
+
+cards = Pokemon::Card.where(q: '!set.name:Base')
+# p cards
+
 cards.each do |card|
-  PokemonCard.create(name: card.name, artist: card.artist, image_url: card.images.small, pokemon_set_id: 3)
-  puts "Creating #{card.name}"
+  puts "#{card.name} by:  #{card.artist}"
 end
